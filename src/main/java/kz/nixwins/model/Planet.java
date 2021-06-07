@@ -1,12 +1,13 @@
 package kz.nixwins.model;
 
 import com.sun.istack.Nullable;
+import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name="planets")
-
+@DynamicUpdate
 public class Planet {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,7 +17,7 @@ public class Planet {
     private String name;
 
     @Column(name = "lord_id")
-    private  int lordId;
+    private  Long lordId;
 
     public Long getId() {
         return id;
@@ -34,11 +35,11 @@ public class Planet {
         this.name = name;
     }
 
-    public int getLordId() {
+    public Long getLordId() {
         return lordId;
     }
 
-    public void setLordId(int lordId) {
+    public void setLordId(Long lordId) {
         this.lordId = lordId;
     }
 }

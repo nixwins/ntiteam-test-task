@@ -39,9 +39,4 @@ public class LordService {
     public List<Lord> getAllYongLords(){
             return lordsRepository.findByAge(PageRequest.of(0, 10));
     }
-
-    public void delete(Long id) {
-
-        lordsRepository.deleteById(id);
-    }
 }

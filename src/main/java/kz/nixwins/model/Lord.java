@@ -20,7 +20,7 @@ public class Lord {
     @Column(name = "age")
     private int age;
 
-    @OneToMany(fetch = FetchType.LAZY)
+    @OneToMany(cascade = CascadeType.DETACH, fetch = FetchType.LAZY)
     private List<Lord> freeLords;
 
     public Lord(){}
