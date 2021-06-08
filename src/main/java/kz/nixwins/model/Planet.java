@@ -20,11 +20,10 @@ public class Planet {
 
     @Column(insertable = false, updatable = false)
 //    @JoinColumn(name = "lord_name")
-    @OneToOne
-    private Lord lord;
+    private String lordName;
 
     public String getLordName() {
-        return lord.getName();
+        return lordName;
     }
 
     public Long getId() {
