@@ -35,14 +35,9 @@ public class Lord {
         return id;
     }
 
-//    public List<Lord> getFreeLords() {
-//        return freeLords;
-//    }
-
     public void setFreeLords(List<Lord> freeLords) {
         this.freeLords = freeLords;
     }
-
 
     public String getName() {
         return name;

@@ -1,6 +1,5 @@
 package kz.nixwins.model;
 
-import com.sun.istack.Nullable;
 import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
@@ -18,6 +17,15 @@ public class Planet {
 
     @Column(name = "lord_id")
     private  Long lordId;
+
+    @Column(insertable = false, updatable = false)
+//    @JoinColumn(name = "lord_name")
+    @OneToOne
+    private Lord lord;
+
+    public String getLordName() {
+        return lord.getName();
+    }
 
     public Long getId() {
         return id;

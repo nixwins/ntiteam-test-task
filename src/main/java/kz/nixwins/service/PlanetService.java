@@ -19,7 +19,7 @@ public class PlanetService {
     private PlanetsRepository planetsRepository;
 
     public List<Planet> getAllPlanet(){
-        return  planetsRepository.findAll();
+        return  planetsRepository.getLordsWithNull();
     }
 
     public Planet getById(Long id) {
@@ -28,7 +28,7 @@ public class PlanetService {
 
     public void delete(Long id) {
 
-        planetsRepository.deleteById(id);
+        planetsRepository.deleteByIdIgnoreLordName(id);
     }
 
     public Planet save(Planet planet){
