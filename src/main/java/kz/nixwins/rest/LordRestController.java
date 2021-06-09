@@ -1,19 +1,15 @@
 package kz.nixwins.rest;
 
 import kz.nixwins.model.Lord;
-import kz.nixwins.model.Planet;
 import kz.nixwins.service.LordService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
-import java.util.Optional;
 
 @CrossOrigin(origins = "http://localhost:3000", maxAge = 3600)
 @RestController
@@ -47,6 +43,4 @@ public class LordRestController {
 
         return  new ResponseEntity<>(lordService.getAllYongLords(), HttpStatus.OK);
     }
-
-
 }

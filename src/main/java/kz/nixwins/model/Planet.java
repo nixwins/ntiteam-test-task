@@ -19,11 +19,6 @@ public class Planet {
     @Column(name = "lord_id")
     private  Long lordId;
 
-//    @Column(insertable = false, updatable = false)
-//    @JoinTable(name = "lords")
-//    private String lordName;
-
-//    @ManyToOne(cascade = CascadeType.PERSIST, optional = false)
     @ManyToOne(targetEntity = Lord.class, fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
     @JoinColumn(name = "lord_id", insertable = false, updatable = false)
     private Lord lord;
@@ -32,15 +27,9 @@ public class Planet {
         return lord;
     }
 
-
     public void setLord(Lord lord) {
        this.lord = lord;
     }
-
-//    public String getLordName() {
-//        return lord.getName();
-//    }
-
     public Long getId() {
         return id;
     }

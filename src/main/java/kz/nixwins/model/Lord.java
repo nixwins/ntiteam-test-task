@@ -1,18 +1,14 @@
 package kz.nixwins.model;
 
-import org.hibernate.annotations.Where;
-
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
 @Table(name="lords")
-
 public class Lord {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
 
     @Column(name = "name")
     private String name;
