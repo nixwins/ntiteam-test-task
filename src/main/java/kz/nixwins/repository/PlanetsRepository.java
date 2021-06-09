@@ -23,6 +23,6 @@ public interface PlanetsRepository  extends JpaRepository<Planet, Long> {
             "WHERE p.lord_id IS NULL OR p.lord_id > 0")
     List<Planet> getLordsWithNull();
 
-    @Query(nativeQuery = true, value = "DELETE FROM planets WHERE id = :id")
-    void deleteByIdIgnoreLordName(@Param(value = "id") Long id);
+//    @Query(nativeQuery = true, value = "DELETE FROM planets WHERE id = :id")
+//    void deleteByIdIgnoreLordName(@Param(value = "id") Long id);
 }

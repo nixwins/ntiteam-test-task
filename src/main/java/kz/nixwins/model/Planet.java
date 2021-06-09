@@ -1,6 +1,7 @@
 package kz.nixwins.model;
 
 import org.hibernate.annotations.DynamicUpdate;
+import org.springframework.data.annotation.Persistent;
 
 import javax.persistence.*;
 
@@ -18,13 +19,27 @@ public class Planet {
     @Column(name = "lord_id")
     private  Long lordId;
 
-    @Column(insertable = false, updatable = false)
-//    @JoinColumn(name = "lord_name")
-    private String lordName;
+//    @Column(insertable = false, updatable = false)
+//    @JoinTable(name = "lords")
+//    private String lordName;
 
-    public String getLordName() {
-        return lordName;
+//    @ManyToOne(cascade = CascadeType.PERSIST, optional = false)
+    @ManyToOne(targetEntity = Lord.class, fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "lord_id", insertable = false, updatable = false)
+    private Lord lord;
+
+    public Lord getLord() {
+        return lord;
     }
+
+
+    public void setLord(Lord lord) {
+       this.lord = lord;
+    }
+
+//    public String getLordName() {
+//        return lord.getName();
+//    }
 
     public Long getId() {
         return id;

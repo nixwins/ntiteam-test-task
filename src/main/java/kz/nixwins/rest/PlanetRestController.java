@@ -46,10 +46,10 @@ public class PlanetRestController {
         return new ResponseEntity<>(id, HttpStatus.OK);
     }
 
-    @RequestMapping(value = "", method = RequestMethod.PUT, produces =  MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/setlord", method = RequestMethod.PUT, produces =  MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Planet> updatePlanet(@RequestBody @Validated  Planet planet){
         planetService.updateLord(planet);
-        return new ResponseEntity<>(planetService.getById(planet.getLordId()), HttpStatus.OK);
+        return new ResponseEntity<>(planetService.getById(planet.getId()), HttpStatus.OK);
     }
 
 }
