@@ -10,7 +10,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
-@CrossOrigin(origins = "https://dashboard.heroku.com/apps/ntiteam-front", maxAge = 3600)
+@CrossOrigin(origins = "https://ntiteam-front.herokuapp.com", maxAge = 3600)
 @RestController
 @RequestMapping("/api/v1/planets")
 
